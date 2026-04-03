@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
@@ -20,40 +20,57 @@
     nav { max-width: 1100px; margin: 0 auto; padding: 0 20px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
     .logo { font-family: var(--font-head); font-size: 1.35rem; font-weight: 800; color: var(--white); }
     .logo span { color: var(--gold); }
-    .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+    .hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
     .hero h1 { font-family: var(--font-head); font-size: clamp(2.4rem, 7vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
     .hero h1 em { font-style: normal; color: var(--gold); }
     .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin-bottom: 40px; }
     .btn-primary { background: var(--gold); color: #000; font-family: var(--font-head); font-weight: 700; padding: 16px 32px; border-radius: 8px; display: inline-block; }
-    section { padding: 60px 20px; }
+    section { padding: 80px 20px; }
     .container { max-width: 1100px; margin: 0 auto; }
-    .section-title { font-family: var(--font-head); font-size: 2.5rem; font-weight: 800; margin-bottom: 40px; text-align: center; }
+    .section-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; text-align: center; }
+    .section-title { font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 48px; text-align: center; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
-    .product-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
-    .product-thumb { width: 100%; aspect-ratio: 16/9; position: relative; }
+    .product-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: transform 0.3s; }
+    .product-card:hover { transform: translateY(-10px); border-color: var(--gold); }
+    .product-thumb { width: 100%; aspect-ratio: 16/9; position: relative; overflow: hidden; }
     .product-thumb img { width: 100%; height: 100%; object-fit: cover; }
-    .product-badge { position: absolute; top: 15px; right: 15px; background: var(--orange); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 5px 12px; border-radius: 20px; }
+    .product-badge { position: absolute; top: 15px; right: 15px; background: var(--orange); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 5px 12px; border-radius: 20px; z-index: 2; }
     .product-body { padding: 25px; }
-    .product-body h3 { font-family: var(--font-head); font-size: 1.3rem; margin-bottom: 10px; }
-    .product-body p { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; }
+    .product-body h3 { font-family: var(--font-head); font-size: 1.25rem; margin-bottom: 12px; }
+    .product-body p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; }
     .product-footer { display: flex; align-items: center; justify-content: space-between; padding: 20px 25px; border-top: 1px solid var(--border); }
     .product-price { font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; color: var(--gold); }
-    .product-price s { color: var(--muted); font-size: 0.9rem; margin-left: 8px; }
+    .product-price small { display: block; font-size: 0.75rem; color: var(--muted); font-weight: 400; }
     .btn-buy { background: var(--orange); color: #fff; font-weight: 700; padding: 12px 24px; border-radius: 8px; }
-    footer { padding: 40px; text-align: center; border-top: 1px solid var(--border); color: var(--muted); }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+    .testi-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 30px; }
+    .testi-text { font-style: italic; color: #ccc; margin-bottom: 20px; font-size: 0.95rem; }
+    .testi-author { display: flex; align-items: center; gap: 15px; }
+    .testi-avatar { width: 45px; height: 45px; border-radius: 50%; background: var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .cta-final { text-align: center; background: var(--dark); border-radius: 20px; padding: 60px 20px; border: 1px solid var(--border); margin-top: 40px; }
+    .btn-whatsapp { background: #25d366; color: #fff; font-weight: 700; padding: 16px 32px; border-radius: 10px; display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; }
+    footer { padding: 60px 20px; text-align: center; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
   </style>
 </head>
 <body>
   <header><nav><div class="logo">Momo<span>Digi</span></div></nav></header>
-  <section><div class="hero"><h1>Gagne ta vie avec le <em>digital</em> et l'<em>IA</em></h1><p class="hero-sub">Des outils concrets pour réussir sans diplôme.</p><a href="#produits" class="btn-primary">Voir les produits ↓</a></div></section>
-  <section id="produits"><div class="container"><h2 class="section-title">Mes Produits</h2>
+  <section><div class="hero"><h1>Arrête d'attendre. Commencez à <em>gagner</em> avec le <em>digital.</em></h1><p class="hero-sub">E-books, formations et outils IA conçus pour les francophones qui veulent des résultats concrets — sans diplôme requis.</p><a href="#produits" class="btn-primary">Voir les produits →</a></div></section>
+  <section id="produits"><div class="container"><div class="section-tag">Ce que je vends</div><h2 class="section-title">Des outils. Pas des rêves.</h2>
     <div class="products-grid">
-      <div class="product-card"><div class="product-thumb"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663456809420/wkgFVJwGdOvuFQbP.png"><div class="product-badge">E-book</div></div><div class="product-body"><h3>Zéro Diplôme. Zéro Excuse.</h3><p>Le système pour générer tes premiers 100 000 FCFA.</p></div><div class="product-footer"><div class="product-price">1 000 FCFA</div><a href="https://momodigi.mychariow.shop/prd_gkf0ud" class="btn-buy">Acheter</a></div></div>
-      <div class="product-card"><div class="product-thumb"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663456809420/BlZuZcBjexQfTkoI.png"><div class="product-badge">Promo</div></div><div class="product-body"><h3>10 Prompts Viraux</h3><p>Crée du contenu qui explose sur les réseaux.</p></div><div class="product-footer"><div class="product-price">2 000 FCFA <s>3 500</s></div><a href="https://momodigi.mychariow.shop/prd_9j3ihk" class="btn-buy">Acheter</a></div></div>
-      <div class="product-card"><div class="product-thumb"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663456809420/XQcAXXhjvErcHVgG.png"><div class="product-badge">Promo</div></div><div class="product-body"><h3>Guide Business IA</h3><p>Lance ton business digital de zéro.</p></div><div class="product-footer"><div class="product-price">3 500 FCFA <s>10 000</s></div><a href="https://momodigi.mychariow.shop/prd_hcay40" class="btn-buy">Acheter</a></div></div>
+      <div class="product-card"><div class="product-thumb"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663456809420/wkgFVJwGdOvuFQbP.png"><div class="product-badge">E-book PDF</div></div><div class="product-body"><h3>Zéro Diplôme. Zéro Excuse.</h3><p>Le système complet pour générer tes premiers 100 000 FCFA avec l'IA et un simple smartphone. Méthodes testées, étapes concrètes.</p></div><div class="product-footer"><div class="product-price">1 000 FCFA<small>Téléchargement immédiat</small></div><a href="https://momodigi.mychariow.shop/prd_gkf0ud" target="_blank" class="btn-buy">Acheter</a></div></div>
+      <div class="product-card"><div class="product-thumb"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663456809420/BlZuZcBjexQfTkoI.png"><div class="product-badge">Promo -43%</div></div><div class="product-body"><h3>Pack de 10 prompts viraux</h3><p>10 prompts prêts à l'emploi pour créer du contenu viral, rédiger des offres clients et automatiser tes tâches sur ChatGPT et Claude.</p></div><div class="product-footer"><div class="product-price">2 000 FCFA<small><s style="color:var(--muted);">3 500 FCFA</s> · Offre limitée</small></div><a href="https://momodigi.mychariow.shop/prd_9j3ihk" target="_blank" class="btn-buy">Acheter</a></div></div>
+      <div class="product-card"><div class="product-thumb"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663456809420/XQcAXXhjvErcHVgG.png"><div class="product-badge">Promo -65%</div></div><div class="product-body"><h3>Guide Business IA</h3><p>Le guide ultime pour démarrer ton business digital de zéro. Stratégies éprouvées et outils pour réussir sans investissement initial.</p></div><div class="product-footer"><div class="product-price">3 500 FCFA<small><s style="color:var(--muted);">10 000 FCFA</s> · Offre limitée</small></div><a href="https://momodigi.mychariow.shop/prd_hcay40" target="_blank" class="btn-buy">Acheter</a></div></div>
     </div></div></section>
-  <footer><p>© 2026 Momo Digi</p></footer>
+  <section id="temoignages"><div class="container"><div class="section-tag">Ce qu'ils disent</div><h2 class="section-title">Résultats réels. Gens réels.</h2>
+    <div class="testi-grid">
+      <div class="testi-card"><p class="testi-text">"J'ai appliqué la méthode de l'e-book pendant 3 semaines. Premier paiement reçu : 25 000 FCFA. Ça paie vraiment."</p><div class="testi-author"><div class="testi-avatar">👩🏾</div><div><strong>Aminata K.</strong><br><small>Étudiante · Dakar</small></div></div></div>
+      <div class="testi-card"><p class="testi-text">"Le pack de prompts m'a sauvé la mise. Je créais du contenu pour mes clients en 2h au lieu de toute une journée."</p><div class="testi-author"><div class="testi-avatar">👨🏿</div><div><strong>Franck M.</strong><br><small>Freelance · Abidjan</small></div></div></div>
+      <div class="testi-card"><p class="testi-text">"La formation freelance IA est directe. En une semaine j'avais mon profil sur Fiverr et mon premier client."</p><div class="testi-author"><div class="testi-avatar">👨🏽</div><div><strong>Ibrahima D.</strong><br><small>Entrepreneur · Bamako</small></div></div></div>
+    </div></div></section>
+  <section><div class="container cta-final"><h2>Rejoins la communauté.</h2><p style="margin-bottom:30px; color:var(--muted);">Plus de 1 200 personnes apprennent et s'entraident dans notre groupe WhatsApp.</p><a href="https://chat.whatsapp.com/..." target="_blank" class="btn-whatsapp">💬 Rejoindre le groupe WhatsApp</a></div></section>
+  <footer><p>© 2026 Momo Digi. Tous droits réservés.</p></footer>
 </body>
 </html>
+
 
     
